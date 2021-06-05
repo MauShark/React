@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <h1>HOLQUE TAL </h1>
       <p>lorem
-      asddddddddddddddddddddddddddasddddddddddddddddddddddddddsdddddddddddddddddddddddddasdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+      probando 2
       </p>
     </div>
   );
