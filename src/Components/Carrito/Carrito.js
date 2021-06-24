@@ -4,16 +4,13 @@ import img from './carrito-de-compras.png';
 
 
 function Carrito () {
-    
-
-    return(
+  return(
         
-        <div className="LogoCarrito">
-      <img src={img} height="30" width="30" alt="Carrito de compras" />
-      
-      </div>
+        <div className="LogoCarrito" name="LogoCarrito">
+            <img src={img} height="30" width="30" alt="Carrito de compras" />
+        </div>
     );
 }
 
 
-export default Carrito;
+export default Carrito;   

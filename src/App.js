@@ -3,25 +3,15 @@ import './App.css';
 
 //Components
 import Header from'./Components/Header/Header';
-import Gretting from './Components/Home/Gretting';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import Navbar from './Components/Navbar/Navbar';
+import Counter from './Components/ItemCount/ItemCount';
+import Prueba from './Components/ItemList/ItemList';
 
 
 
-
-
-class App extends React.Component{
-  constructor (){
-    super();
-    this.state={
-      
-
-    }
-  }
-
-  render(){
-    
-      return(
+function App(){
+return(
         <div className='container'>
           <Header
             title={'AVION DE PAPEL'}
@@ -32,11 +22,16 @@ class App extends React.Component{
          />
        
       
-      <Gretting
-          probando1={"BIENVENIDOS A "}
-          probando2={"AVION DE PAPEL !!!!!"}
+      <ItemListContainer
+          probando1={"asd"}
+          probando2={"asdadsadsadsL asddsaadsads!!!!!"}
           />
           
+        <Counter/>
+
+        <Prueba/>
+
+
         </div>
         
         
@@ -44,9 +39,5 @@ class App extends React.Component{
 
       )
 
-    }
-  
-
 }
-
 export default App;

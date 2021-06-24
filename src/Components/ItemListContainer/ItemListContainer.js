@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './Gretting.css';
+import './ItemListContainer.css';
 
 
-function Gretting ({probando1,probando2}) {
+function ItemListContainer ({probando1,probando2}) {
     return(
         <div className="queonda">
             <div>{probando1}</div>
@@ -11,6 +11,6 @@ function Gretting ({probando1,probando2}) {
         </div>
     );
 }
+    
 
-
-export default Gretting;
+export default ItemListContainer;

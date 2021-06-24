@@ -3,11 +3,6 @@ import './Header.css';
 import img from './paper-plane.png';
 
 
-
-
-
-
-
 const Header = (props) => {
     return (
         <div className='Header-container'>

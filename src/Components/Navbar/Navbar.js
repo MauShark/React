@@ -5,7 +5,7 @@ import Carrito from '../Carrito/Carrito';
 
 function Navbar () {
     
-
+    
     return(
 
         <Menu>
@@ -34,7 +34,7 @@ function Navbar () {
          <Carrito/>
           </Menu.Item> 
       </Menu>
-      
+
     );
 }
 
