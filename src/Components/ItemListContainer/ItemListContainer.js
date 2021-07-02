@@ -1,16 +1,34 @@
-import React from 'react';
+import React , { useState,useEffect }from 'react';
+import './ItemListContainer.css'
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import { Link } from 'react-router-dom';
+function ItemListContainer() {
+    let [productos, setItems] = useState([]);
+    useEffect(() => {
+        fetch("https://mocki.io/v1/1f5c0fb9-b390-49bd-8569-ca2fe348bf8c")
+        .then(res => res.json())
+        .then(
+            (result) => {
+                setItems(result);
+            })
+            //console.log(productos)
+        },[])
+return (
 
-import './ItemListContainer.css';
+    <div className="item">
+        {productos.map((producto) => {
+            console.log(producto)
+            return (
+                <div key={producto.id}>
+                    <Link to={`/Detalle/${producto.id}`}>
+                        <ItemDetailContainer data={producto}/>
+                    </Link>
+                </div>
+            );
+        })}
+    </div>
 
-
-function ItemListContainer ({probando1,probando2}) {
-    return(
-        <div className="queonda">
-            <div>{probando1}</div>
-            <div><p>{probando2}</p></div>
-        </div>
-    );
+);
 }
-    
-
 export default ItemListContainer;
+

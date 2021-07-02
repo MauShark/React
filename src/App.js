@@ -1,43 +1,36 @@
 import React from 'react';
 import './App.css';
-
 //Components
 import Header from'./Components/Header/Header';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import Navbar from './Components/Navbar/Navbar';
-import Counter from './Components/ItemCount/ItemCount';
-import Prueba from './Components/ItemList/ItemList';
-
-
+import {BrowserRouter as Router , Switch , Route} from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import Contacto from './Pages/Contacto/Contacto';
+import Nosotros from './Pages/Nosotros/Nosotros';
+import Catalogo from './Pages/Catalogo/Catalogo';
+import ItemDetail from './Components/ItemDetail/ItemDetail';
 
 function App(){
 return(
-        <div className='container'>
-          <Header
-            title={'AVION DE PAPEL'}
-            subtitle={'Soluciones al instante'}
-          />
-         <Navbar
-         
-         />
-       
-      
-      <ItemListContainer
-          probando1={"asd"}
-          probando2={"asdadsadsadsL asddsaadsads!!!!!"}
-          />
-          
-        <Counter/>
-
-        <Prueba/>
-
-
-        </div>
+  <Router>
+      <div className='container'>
+        <Header/>
+        <Navbar/>
+        <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/Nosotros" component={Nosotros} />
+        <Route path="/Catalogo" component={Catalogo} />
+        <Route path="/Contacto" component={Contacto} />
+        <Route path="/Detalle/:id"  component={ItemDetail}/>
+      </Switch>
+    {/* <ItemListContainer/> */}
         
-        
-        
-
-      )
+      {/* <Counter/> */}
+      </div>
+  </Router>
+  )
 
 }
-export default App;
+export default App; 
+
+//<Prueba/>

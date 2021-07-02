@@ -1,30 +1,28 @@
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
 import Carrito from '../Carrito/Carrito';
-
-
+import {Link} from 'react-router-dom';
+import './Navbar.css';
 function Navbar () {
-    
-    
-    return(
+  return(
 
-        <Menu>
+    <Menu>
         <Menu.Item
           name='Nosotros'
         >
-          Nosotros
+          <Link to="/Nosotros" className="link">Nosotros</Link>
         </Menu.Item>
 
         <Menu.Item
           name='Catalogo'
         >
-          Catalogo
+          <Link to="/Catalogo" className="link">Catalogo</Link>
         </Menu.Item>
 
         <Menu.Item
           name='Contacto'
         >
-          Contacto
+          <Link to="/Contacto" className="link">Contacto</Link>
         </Menu.Item>
         
         
@@ -33,9 +31,9 @@ function Navbar () {
           >
          <Carrito/>
           </Menu.Item> 
-      </Menu>
+    </Menu>
 
-    );
+  );
 }
 
 

@@ -1,14 +1,16 @@
 import React from 'react';
 import './Header.css';
 import img from './paper-plane.png';
+import {Link} from 'react-router-dom';
 
-
-const Header = (props) => {
+const Header = () => {
     return (
         <div className='Header-container'>
-            <h1 style={{fontSize:40 ,fontStyle: "oblique"}}>{props.title}</h1>
-            <h2 >{props.subtitle}</h2>
-            <img src={img} alt="logo empresa" />
+            <Link to="/" className="link"><h1 style={{fontSize:40 ,fontStyle: "oblique"}}>AVION DE PAPEL</h1>
+                </Link>
+               <img src={img} alt="logo empresa" />  
+            
+            
         </div>
         
     );
