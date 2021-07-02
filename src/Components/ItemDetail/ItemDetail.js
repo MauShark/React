@@ -23,7 +23,7 @@ const ItemDetail = ({match}) => {
     return (
         
         <div>
-            <h1>asd</h1>
+            <h1>Detalle</h1>
             {filtro.map((productoFiltrado)=>{
                 
                 return(
