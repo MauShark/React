@@ -4,7 +4,7 @@ function Catalogo(){
     return(
         <div>
             <h2>NUESTROS PRODUCTOS</h2>
-        <ItemListContainer/>
+            <ItemListContainer/>
         </div>
     )
 }

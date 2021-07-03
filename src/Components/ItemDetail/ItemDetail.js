@@ -6,7 +6,7 @@ const ItemDetail = ({match}) => {
     let [item , setItems]= useState([]);
     console.log(itemId)
     useEffect(()=>{
-        fetch(`https://mocki.io/v1/1f5c0fb9-b390-49bd-8569-ca2fe348bf8c`)
+        fetch(`https://mocki.io/v1/06db9043-d3a3-479f-9144-646997961fe5`)
         .then(res => res.json())
         .then(
             (result) => {
@@ -15,11 +15,19 @@ const ItemDetail = ({match}) => {
     },[itemId])
     console.log(itemId)
     console.log(item)
-    let filtro= item.filter(producto=>{
-        return (producto.id === itemId)
-    });
+    /* function asd(itemId){
+        let {title}=item.find(el=>el.id == itemId)
+        console.log({title})
+        return title
+    }
+    let filtro=asd(itemId)
+    console.log(filtro) */
+     let {filtro}= item.filter(producto=>{
+     return (producto.id === itemId.id)
+    });  
     
-    console.log(filtro)
+   
+    
     return (
         
         <div>
@@ -28,14 +36,14 @@ const ItemDetail = ({match}) => {
                 
                 return(
                   
-                <Card>
-                <Image id="fondocard"src={productoFiltrado.img} wrapped ui={false} />
-                <Card.Content>
-                    <Card.Header>{productoFiltrado.title}</Card.Header>
-                    <Card.Description>{productoFiltrado.description}</Card.Description>
-                </Card.Content>
-                <Card.Content>{productoFiltrado.precio}</Card.Content>
-                </Card>
+                    <Card>
+                    <Image id="fondocard"src={productoFiltrado.img} wrapped ui={false} />
+                    <Card.Content>
+                        <Card.Header>{productoFiltrado.title}</Card.Header>
+                        <Card.Description>{productoFiltrado.description}</Card.Description>
+                    </Card.Content>
+                    <Card.Content>{productoFiltrado.precio}</Card.Content>
+                    </Card>
             );
             })}
             
