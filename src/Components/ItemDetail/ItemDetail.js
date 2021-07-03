@@ -1,5 +1,6 @@
 import React , {useEffect,useState}from 'react'
 import { Card ,Image} from 'semantic-ui-react';
+import './ItemDetail.css';
 const ItemDetail = ({match}) => {
     //console.log('match',match)
     let itemId=match.params.id;
@@ -16,12 +17,13 @@ const ItemDetail = ({match}) => {
     //console.log(item)
     return (
         <div>
-            <div><h1>Detalle</h1></div>
+            <div><h2>Detalle</h2></div>
             {item.filter(producto=>producto.id == itemId).map((productoFiltrado)=>{
                 //console.log(item)
                 //console.log(itemId)
                 return(
-                  <Card>
+                    <div className="detalle-producto">
+                  <Card >
                         <Image id="fondocard"src={productoFiltrado.img} wrapped ui={false} />
                         <Card.Content>
                             <Card.Header>{productoFiltrado.title}</Card.Header>
@@ -29,6 +31,7 @@ const ItemDetail = ({match}) => {
                         </Card.Content>
                         <Card.Content>{`$${productoFiltrado.precio}`}</Card.Content>
                     </Card>
+                    </div>
                 );
             })}
         </div>
