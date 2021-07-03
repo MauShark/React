@@ -14,32 +14,23 @@ const ItemDetail = ({match}) => {
             })
     },[itemId])
     //console.log(item)
-    
-    
-   
-    
     return (
-        
         <div>
-            <h1>Detalle</h1>
+            <div><h1>Detalle</h1></div>
             {item.filter(producto=>producto.id == itemId).map((productoFiltrado)=>{
                 //console.log(item)
                 //console.log(itemId)
                 return(
-                  
-                    <Card>
-                    <Image id="fondocard"src={productoFiltrado.img} wrapped ui={false} />
-                    <Card.Content>
-                        <Card.Header>{productoFiltrado.title}</Card.Header>
-                        <Card.Description>{productoFiltrado.description}</Card.Description>
-                    </Card.Content>
-                    <Card.Content>{`$${productoFiltrado.precio}`}</Card.Content>
+                  <Card>
+                        <Image id="fondocard"src={productoFiltrado.img} wrapped ui={false} />
+                        <Card.Content>
+                            <Card.Header>{productoFiltrado.title}</Card.Header>
+                            <Card.Description>{productoFiltrado.description}</Card.Description>
+                        </Card.Content>
+                        <Card.Content>{`$${productoFiltrado.precio}`}</Card.Content>
                     </Card>
-            );
+                );
             })}
-            
-            
-               
         </div>
     )
 }

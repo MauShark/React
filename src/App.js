@@ -13,7 +13,7 @@ import ItemDetail from './Components/ItemDetail/ItemDetail';
 function App(){
 return(
   <Router>
-      <div className='container'>
+      <div>
         <Header/>
         <Navbar/>
         <Switch>
@@ -23,9 +23,6 @@ return(
         <Route path="/Contacto" component={Contacto} />
         <Route path="/Detalle/:id"  component={ItemDetail}/>
       </Switch>
-    {/* <ItemListContainer/> */}
-        
-      {/* <Counter/> */}
       </div>
   </Router>
   )
@@ -33,4 +30,3 @@ return(
 }
 export default App; 
 
-//<Prueba/>

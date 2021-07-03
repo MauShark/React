@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 import './Navbar.css';
 function Navbar () {
   return(
-
-    <Menu>
+    <div className="nabvar-container">
+      <Menu>
         <Menu.Item
           name='Nosotros'
         >
@@ -25,14 +25,13 @@ function Navbar () {
           <Link to="/Contacto" className="link">Contacto</Link>
         </Menu.Item>
         
-        
-          <Menu.Item 
+        <Menu.Item 
           name="Carrito"
           >
-         <Carrito/>
-          </Menu.Item> 
-    </Menu>
-
+          <Carrito/>
+        </Menu.Item> 
+      </Menu>
+    </div>
   );
 }
 
