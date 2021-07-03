@@ -1,10 +1,10 @@
 import React , {useEffect,useState}from 'react'
 import { Card ,Image} from 'semantic-ui-react';
 const ItemDetail = ({match}) => {
-    //console.log('match',match.params.id)
+    //console.log('match',match)
     let itemId=match.params.id;
     let [item , setItems]= useState([]);
-    console.log(itemId)
+    //console.log(itemId)
     useEffect(()=>{
         fetch(`https://mocki.io/v1/06db9043-d3a3-479f-9144-646997961fe5`)
         .then(res => res.json())
@@ -13,18 +13,8 @@ const ItemDetail = ({match}) => {
                 setItems(result);
             })
     },[itemId])
-    console.log(itemId)
-    console.log(item)
-    /* function asd(itemId){
-        let {title}=item.find(el=>el.id == itemId)
-        console.log({title})
-        return title
-    }
-    let filtro=asd(itemId)
-    console.log(filtro) */
-     let {filtro}= item.filter(producto=>{
-     return (producto.id === itemId.id)
-    });  
+    //console.log(item)
+    
     
    
     
@@ -32,8 +22,9 @@ const ItemDetail = ({match}) => {
         
         <div>
             <h1>Detalle</h1>
-            {filtro.map((productoFiltrado)=>{
-                
+            {item.filter(producto=>producto.id == itemId).map((productoFiltrado)=>{
+                //console.log(item)
+                //console.log(itemId)
                 return(
                   
                     <Card>
@@ -42,7 +33,7 @@ const ItemDetail = ({match}) => {
                         <Card.Header>{productoFiltrado.title}</Card.Header>
                         <Card.Description>{productoFiltrado.description}</Card.Description>
                     </Card.Content>
-                    <Card.Content>{productoFiltrado.precio}</Card.Content>
+                    <Card.Content>{`$${productoFiltrado.precio}`}</Card.Content>
                     </Card>
             );
             })}
