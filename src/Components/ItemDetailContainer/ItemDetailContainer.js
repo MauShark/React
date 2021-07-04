@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card,Image } from 'semantic-ui-react'
 import './ItemDetailContainer.css'
-import {Grid} from 'semantic-ui-react';
 const ItemDetailContainer = ({data}) => (
   <Card>
     <Image id="fondocard"src={data.img} wrapped ui={false} />

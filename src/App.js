@@ -9,7 +9,7 @@ import Contacto from './Pages/Contacto/Contacto';
 import Nosotros from './Pages/Nosotros/Nosotros';
 import Catalogo from './Pages/Catalogo/Catalogo';
 import ItemDetail from './Components/ItemDetail/ItemDetail';
-
+import Footer from './Components/Footer/Footer';
 function App(){
 return(
   <Router>
@@ -22,7 +22,8 @@ return(
         <Route path="/Catalogo" component={Catalogo} />
         <Route path="/Contacto" component={Contacto} />
         <Route path="/Detalle/:id"  component={ItemDetail}/>
-      </Switch>
+        </Switch>
+        <Footer/>
       </div>
   </Router>
   )

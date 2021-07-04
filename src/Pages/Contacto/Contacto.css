@@ -1,0 +1,20 @@
+.Contact-Container{
+    display: block;
+    background-color: black;
+    
+}
+.Contact-number{
+    margin: 2px;
+    padding: 5px 0px;
+    display: flex;
+    justify-content: center;
+}
+.Contact-title{
+    background-color: red;
+}
+.Contact-form{
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+    padding: 5px 0px;
+}
