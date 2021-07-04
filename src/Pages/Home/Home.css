@@ -1,0 +1,8 @@
+.title-container{
+    position:absolute;
+    color:white;
+}
+.home-container{
+    display:flex;
+    justify-content: center;
+}

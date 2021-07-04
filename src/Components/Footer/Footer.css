@@ -1,6 +1,6 @@
 .Footer-container{
-    background-color: pink;
-    border-top: 2px solid plum;
+    background-color: #353434;
+    /* border-top: 2px solid plum; */
 }
 .title-container{
 padding: 1em;
@@ -8,5 +8,5 @@ padding: 1em;
 .Button-container{
     display:flex;
     justify-content: center;
-
+    background-color: #353434;
 }

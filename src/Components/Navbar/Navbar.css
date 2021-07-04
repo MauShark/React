@@ -5,5 +5,14 @@
     display: flex;
     justify-content: center;
     padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.103);
+}
+.nabvar-item:hover{
+    background-color: rgb(77, 76, 76) !important;
+    transition-duration: 1s !important;
+}
+
+.navbar-activated{
 
 }

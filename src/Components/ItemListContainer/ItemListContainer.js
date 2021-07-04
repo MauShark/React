@@ -18,7 +18,7 @@ function ItemListContainer() {
             {productos.map((producto) => {
                 console.log(producto)
                 return (
-                    <div key={producto.id} style={{paddingBottom: 50}} className="col">
+                    <div key={producto.id} style={{paddingBottom: 20 , paddingTop: 20}} className="col">
                         <Link to={`/Detalle/${producto.id}`}>
                             <ItemDetailContainer data={producto}/>
                         </Link>

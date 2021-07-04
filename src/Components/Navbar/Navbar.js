@@ -6,26 +6,26 @@ import './Navbar.css';
 function Navbar () {
   return(
     <div className="nabvar-container">
-      <Menu>
-        <Menu.Item
+      <Menu >{/*style={{backgroundColor: "#353434"}}*/}
+        <Menu.Item className="nabvar-item"
           name='Nosotros'
         >
           <Link to="/Nosotros" className="link">Nosotros</Link>
         </Menu.Item>
 
-        <Menu.Item
+        <Menu.Item className="nabvar-item"
           name='Catalogo'
         >
           <Link to="/Catalogo" className="link">Catalogo</Link>
         </Menu.Item>
 
-        <Menu.Item
+        <Menu.Item className="nabvar-item"
           name='Contacto'
         >
           <Link to="/Contacto" className="link">Contacto</Link>
         </Menu.Item>
         
-        <Menu.Item 
+        <Menu.Item className="nabvar-item"
           name="Carrito"
           >
           <Carrito/>

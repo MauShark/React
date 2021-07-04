@@ -1,9 +1,14 @@
+
 .Header-container{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 20vh;
-    background-color: pink;
     width: 100%;
-    border-bottom: #e0abd4 solid;
+    background-color: #353434;
+    
+    /* background-color: pink; 
+    border-bottom: #e0abd4 solid; */
+    
+    
 }

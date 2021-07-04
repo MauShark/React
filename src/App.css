@@ -12,3 +12,7 @@ p{
   display: flex !important; 
   justify-content: center !important;
 }
+.app-container{
+  background-image: url(./shattered-island.png);
+  background-attachment: fixed;
+}
