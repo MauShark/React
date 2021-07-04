@@ -1,11 +1,12 @@
 .Footer-container{
     background-color: #353434;
+    display:block;
+    padding: 1rem;
     /* border-top: 2px solid plum; */
 }
-.title-container{
-padding: 1em;
-}
+
 .Button-container{
+    padding-top: 1rem;
     display:flex;
     justify-content: center;
     background-color: #353434;

@@ -17,8 +17,12 @@ const ItemDetail = ({match}) => {
     },[itemId])
     //console.log(item)
     return (
-        <div>
-            <div><h2>Detalle</h2></div>
+        <div className="detalle-container">
+            <div className="title-container">
+                <h2>Detalle</h2>
+            </div>
+            <div className="detalle-card-container">
+                
             {item.filter(producto=>producto.id == itemId).map((productoFiltrado)=>{
                 //console.log(item)
                 //console.log(itemId)
@@ -37,6 +41,7 @@ const ItemDetail = ({match}) => {
                     </div>
                 );
             })}
+            </div>
         </div>
     )
 }

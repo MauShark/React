@@ -10,7 +10,9 @@
     justify-content: center;
 }
 .Contact-title{
-    
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
 }
 .Contact-form{
     display: flex;

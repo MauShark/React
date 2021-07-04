@@ -1,3 +1,8 @@
 .catalogo-container{
-    
+    display: flex;
+    justify-content: center;
+}
+.catalogo-container h2{
+    display:flex;
+    justify-content: center;
 }

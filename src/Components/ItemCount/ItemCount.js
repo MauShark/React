@@ -2,7 +2,7 @@ import React, { useState} from "react";
 import { Button } from 'semantic-ui-react';
 
 function Counter({stock}){
-    let asd=stock;
+    
     let [numero, setNumero] = useState(0);
 
     let handleIncrement = () => {

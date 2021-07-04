@@ -1,5 +1,27 @@
 .detalle-producto{
     display:flex;
     justify-content: center;
-    padding-bottom: 20px;
+    
+}
+.detalle-container{
+    display: flex ;
+    justify-content: center;
+    padding: 1rem;
+    
+   /* background-color: rgba(255, 255, 255, 0.103); */
+}
+.title-container {
+    display:inline-block;
+    position: absolute;
+    padding: 2rem !important;
+    margin: 2px;    
+
+}
+.detalle-card-container{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    padding: 4rem 2rem 2rem 2rem;
+    
+    background-color: rgba(255, 255, 255, 0.103);
 }

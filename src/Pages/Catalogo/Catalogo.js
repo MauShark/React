@@ -4,7 +4,9 @@ import ItemListContainer from '../../Components/ItemListContainer/ItemListContai
 function Catalogo(){
     return(
         <div className="catalogo-container">
-            <h2>NUESTROS PRODUCTOS</h2>
+            <div style={{ padding: 20 , display:"flex" , justifyContent: "center" }}>
+                <h2>NUESTROS PRODUCTOS</h2>
+            </div>
             <ItemListContainer/>
         </div>
     )

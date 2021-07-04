@@ -5,7 +5,7 @@ import { Button } from 'semantic-ui-react';
 function Footer() {
     return (
         <div className="Footer-container">
-            <div className="Title-container">
+            <div className="Title-container" style={{ display:"flex" , justifyContent: "center" }}>
                 <h2>Footer</h2>
             </div>
             <div className="Button-container">
