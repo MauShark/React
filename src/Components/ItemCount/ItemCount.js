@@ -19,13 +19,16 @@ function Counter({stock}){
             setNumero(numero = 0);
             alert("No hay stock");
         }
+        
     };
    
     return(
         <div className='CounterSection'>
-	    <p>{numero}</p>
-	    <Button color='green' id="buttonAdd" className="buttonAdd" onClick={handleIncrement}>+1</Button>
-        <Button color='red' onClick={handleDecrement}>-1</Button>
+	    <span><strong>Cantidad</strong></span>
+        <p>{numero}</p>
+	    <Button color='green' id="buttonAdd" className="buttonAdd" onClick={handleIncrement}>+</Button>
+        <Button color='red' onClick={handleDecrement}>-</Button>
+        <Button color='blue' id="addCarrito">Agregar al carrito</Button>
         </div>
     );
 }

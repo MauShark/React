@@ -29,13 +29,13 @@ const ItemDetail = ({match}) => {
                 return(
                     
                     <div className="detalle-producto">
-                    <Card >
+                    <Card  >
                         <Image id="fondocard"src={productoFiltrado.img} wrapped ui={false} />
                         <Card.Content>
                             <Card.Header>{productoFiltrado.title}</Card.Header>
                             <Card.Description>{productoFiltrado.description}</Card.Description>
                         </Card.Content>
-                        <Card.Content>{`$${productoFiltrado.precio}`}</Card.Content>
+                        <Card.Content>{`$ ${productoFiltrado.precio}`}</Card.Content>
                         <Counter stock={productoFiltrado.stock}/>
                     </Card>
                     </div>

@@ -1,7 +1,7 @@
 import React , { useState,useEffect }from 'react';
 import './ItemListContainer.css'
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
-import { Link } from 'react-router-dom';
+import ItemList from '../ItemList/ItemList';
+
 function ItemListContainer() {
     let [productos, setItems] = useState([]);
     useEffect(() => {
@@ -15,16 +15,7 @@ function ItemListContainer() {
     },[])
     return (
         <div className="Container-list row ">
-            {productos.map((producto) => {
-                console.log(producto)
-                return (
-                    <div key={producto.id} style={{paddingBottom: 20 , paddingTop: 20}} className="col">
-                        <Link to={`/Detalle/${producto.id}`}>
-                            <ItemDetailContainer data={producto}/>
-                        </Link>
-                    </div>
-                );
-            })}
+            <ItemList productos={productos}/>
         </div>
 );
 }
