@@ -1,8 +1,9 @@
-import React , {useEffect,useState}from 'react'
+import React , { useEffect,useState}from 'react'
 import { Card ,Image} from 'semantic-ui-react';
 import './ItemDetail.css';
 import Counter from '../ItemCount/ItemCount';
 const ItemDetail = ({match}) => {
+    
     //console.log('match',match)
     let itemId=match.params.id;
     let [item , setItems]= useState([]);
@@ -36,7 +37,7 @@ const ItemDetail = ({match}) => {
                             <Card.Description>{productoFiltrado.description}</Card.Description>
                         </Card.Content>
                         <Card.Content>{`$ ${productoFiltrado.precio}`}</Card.Content>
-                        <Counter stock={productoFiltrado.stock}/>
+                        <Counter stock={productoFiltrado.stock} producto={productoFiltrado}/>
                     </Card>
                     </div>
                 );

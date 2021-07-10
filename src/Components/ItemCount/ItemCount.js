@@ -1,9 +1,24 @@
 import React, { useState} from "react";
 import { Button } from 'semantic-ui-react';
+import { useItemsContext } from "../ItemsContext/ItemContext";
 
-function Counter({stock}){
+function Counter({stock , producto}){
     
+    let {AgregarAlCarrito,vaciarCarrito , eliminarProducto }=useItemsContext()
     let [numero, setNumero] = useState(0);
+    
+    let del=()=>{
+        eliminarProducto(numero-1)
+    }
+   
+    let addCarrito =()=>{
+        AgregarAlCarrito(producto,numero)
+        
+    }
+        
+    let c=()=>{
+        vaciarCarrito()
+    }
 
     let handleIncrement = () => {
         setNumero(numero + 1);
@@ -21,14 +36,15 @@ function Counter({stock}){
         }
         
     };
-   
     return(
         <div className='CounterSection'>
 	    <span><strong>Cantidad</strong></span>
         <p>{numero}</p>
-	    <Button color='green' id="buttonAdd" className="buttonAdd" onClick={handleIncrement}>+</Button>
+	    <Button color='green'onClick={handleIncrement}>+</Button>
         <Button color='red' onClick={handleDecrement}>-</Button>
-        <Button color='blue' id="addCarrito">Agregar al carrito</Button>
+        <Button color='blue' onClick={()=>addCarrito()}>Agregar al carrito</Button>
+        <Button color='black' onClick={()=>c()}>Vaciar Carrito</Button>
+        {/* <Button color='gray' onClick={()=>del()}>DEL</Button> */}
         </div>
     );
 }

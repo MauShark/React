@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
-import Carrito from '../Carrito/Carrito';
+import CarritoContainer from '../CarritoContainer/CarritoContainer';
 import {Link} from 'react-router-dom';
 import './Navbar.css';
 function Navbar () {
@@ -28,7 +28,8 @@ function Navbar () {
         <Menu.Item className="nabvar-item"
           name="Carrito"
           >
-          <Carrito/>
+          {/* <Link to="/Carrito"><CarritoContainer/></Link> */}
+          <CarritoContainer/>
         </Menu.Item> 
       </Menu>
     </div>
