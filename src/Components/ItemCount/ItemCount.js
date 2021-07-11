@@ -1,12 +1,12 @@
 import React, { useState} from "react";
 import { Button } from 'semantic-ui-react';
 import { useItemsContext } from "../ItemsContext/ItemContext";
-
+import { Link } from "react-router-dom";
 function Counter({stock , producto}){
     
-    let {AgregarAlCarrito,vaciarCarrito , eliminarProducto }=useItemsContext()
+    let {carrito,AgregarAlCarrito,vaciarCarrito , eliminarProducto }=useItemsContext()
     let [numero, setNumero] = useState(0);
-    
+    // let carrito1={carrito}
     let del=()=>{
         eliminarProducto(numero-1)
     }
@@ -16,9 +16,9 @@ function Counter({stock , producto}){
         
     }
         
-    let c=()=>{
-        vaciarCarrito()
-    }
+    // let c=()=>{
+    //     vaciarCarrito()
+    // }
 
     let handleIncrement = () => {
         setNumero(numero + 1);
@@ -42,9 +42,9 @@ function Counter({stock , producto}){
         <p>{numero}</p>
 	    <Button color='green'onClick={handleIncrement}>+</Button>
         <Button color='red' onClick={handleDecrement}>-</Button>
-        <Button color='blue' onClick={()=>addCarrito()}>Agregar al carrito</Button>
-        <Button color='black' onClick={()=>c()}>Vaciar Carrito</Button>
-        {/* <Button color='gray' onClick={()=>del()}>DEL</Button> */}
+        {numero > 0 && <Button color='blue' onClick={()=>addCarrito()}>Agregar al carrito</Button>}
+        {/* <Button color='black' onClick={()=>c()}>Vaciar Carrito</Button> */}
+         {numero > 0 && <Button color='gray'><Link to="/Cart" className="link">Terminar compra</Link></Button>}
         </div>
     );
 }

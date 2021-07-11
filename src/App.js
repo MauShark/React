@@ -10,7 +10,10 @@ import Nosotros from './Pages/Nosotros/Nosotros';
 import Catalogo from './Pages/Catalogo/Catalogo';
 import ItemDetail from './Components/ItemDetail/ItemDetail';
 import Footer from './Components/Footer/Footer';
-import {ItemsProvider} from './Components/ItemsContext/ItemContext'
+import {ItemsProvider} from './Components/ItemsContext/ItemContext';
+import Cart from './Components/Cart/Cart';
+
+
 function App(){
 return(
   <ItemsProvider>
@@ -19,11 +22,12 @@ return(
           <Header/>
           <Navbar/>
           <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={Home}/>
           <Route path="/Nosotros" component={Nosotros} />
           <Route path="/Catalogo" component={Catalogo} />
           <Route path="/Contacto" component={Contacto} />
           <Route path="/Detalle/:id"  component={ItemDetail}/>
+          <Route path="/Cart" component={Cart}/>
           </Switch>
           <Footer/>
         </div>

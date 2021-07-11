@@ -13,8 +13,19 @@ export let ItemsProvider = ({children}) => {
     let vaciarCarrito=()=>setCarrit([]);
 
     let AgregarAlCarrito=(item,cantidad)=>{
-        setCarrit(prev=>[...prev,{...item,cantidad}])
-    }
+        //setCarrit(prev=>[...prev,{...item,cantidad}])
+        if(buscadorCarrito(item.id)){
+        let carritoProv=carrito.map(producto=>{
+            if(producto.id===item.id){
+                return {...producto,cantidad: producto.cantidad + cantidad}
+            }else return producto;
+        })
+        setCarrit(carritoProv);
+        } else {
+        setCarrit(prev=>[...prev, {...item ,cantidad }]);
+        }
+    };
+    let buscadorCarrito=id=>carrito.some(item=>item.id===id);
 
     // let eliminarProducto=(id,cantidad)=>{
     //     let borrarproducto;
