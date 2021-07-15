@@ -1,18 +1,31 @@
 import React , { useState,useEffect }from 'react';
-import './ItemListContainer.css'
+import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList';
+import {db} from '../firebase/firebase';
 
-function ItemListContainer() {
+function ItemListContainer(props) {
     let [productos, setItems] = useState([]);
+    let {category}=props
+    console.log(category)
+    
+    
     useEffect(() => {
-        fetch("https://mocki.io/v1/06db9043-d3a3-479f-9144-646997961fe5")
-        .then(res => res.json())
-        .then(
-            (result) => {
-                setItems(result);
-            })
-            //console.log(productos)
+        // fetch("https://mocki.io/v1/06db9043-d3a3-479f-9144-646997961fe5")
+        // .then(res => res.json())
+        // .then(
+        //     (result) => {
+        //         setItems(result);
+        //     })
+        //     console.log(productos)
+
+        (async()=>{
+            const response =await db.collection("products").get()
+            setItems(response.docs.map(item=>({id:item.id,...item.data() })))
+        })();
+
+        
     },[])
+    
     return (
         <div className="Container-list row ">
             <ItemList productos={productos}/>

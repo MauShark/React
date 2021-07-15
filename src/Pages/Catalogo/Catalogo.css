@@ -6,3 +6,7 @@
     display:flex;
     justify-content: center;
 }
+.categoria-selector{
+    position: absolute !important;
+    margin: 0px 20px !important;
+}

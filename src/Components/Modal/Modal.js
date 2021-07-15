@@ -5,14 +5,18 @@ import img from './carrito-de-compras.png';
 import './Modal.css'
 import { Link } from "react-router-dom";
 const CarritoModal = () => {
-    let {carrito,vaciarCarrito}=useItemsContext()
+    let {carrito,vaciarCarrito,totalCarrito}=useItemsContext()
     
   let vaciar=()=>vaciarCarrito([]);
 
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
+  let Total =()=>{
 
+    totalCarrito(carrito)
+    
+  }
   return (
     <div>
       <Button onClick={toggle} className="button-modal">
@@ -25,9 +29,9 @@ const CarritoModal = () => {
               return(
               <div className="carrito-detail-container">
                 <div className="carrito-detail">
-                    {` Producto:${productoSelect.title} 
-                       Precio: $${productoSelect.precio} 
-                       Cantidad:${productoSelect.cantidad}
+                    {` Producto: ${productoSelect.title} 
+                       Precio: $${productoSelect.price} 
+                       Cantidad: ${productoSelect.cantidad}
                     `}
                 </div>   
                   
@@ -37,7 +41,7 @@ const CarritoModal = () => {
           })}
         </ModalBody>
         <ModalFooter>
-            <p>Total:</p>
+            <p>Total:<span>{()=>totalCarrito()}</span></p>
           <Button color="secondary" onClick={toggle}><Link to="/Cart" className="link">¡Comprar!</Link></Button>
           <Button color="dark" onClick={toggle}>Seguir</Button>
           <Button color="blue" className="button-delete" onClick={vaciar}>Vaciar Carrito</Button>

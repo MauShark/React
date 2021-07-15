@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import img from '../src/homer.gif'
 //Components
 import Header from'./Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
@@ -24,10 +25,13 @@ return(
           <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/Nosotros" component={Nosotros} />
-          <Route path="/Catalogo" component={Catalogo} />
+          <Route path="/Catalogo/" component={Catalogo} />
           <Route path="/Contacto" component={Contacto} />
           <Route path="/Detalle/:id"  component={ItemDetail}/>
           <Route path="/Cart" component={Cart}/>
+          <Route path="*">
+            <div><img src={img} width="100%" alt="homer's 404"/></div>
+          </Route>
           </Switch>
           <Footer/>
         </div>
