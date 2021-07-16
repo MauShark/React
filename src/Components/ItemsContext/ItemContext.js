@@ -9,20 +9,18 @@ export let useItemsContext = ()=> useContext(ItemsContext);
 
 export let ItemsProvider = ({children}) => {
     let [carrito, setCarrit] = useState([]);
-    let [precioTotal,setTotal]=useState([])
     
-    //console.log(carrito)
+    let borrarItems=(id)=>{
+        let carrito1=[...carrito]
+        let indexBuscado=carrito1.findIndex(item=>item.id==id)
+        
+    }
+    
+    console.log(carrito)
     
     let vaciarCarrito=()=>setCarrit([]);
 
-    let totalCarrito=(item,cantidad)=>{
-        
-        let prueba=carrito.reduce((acc,item)=>acc+(item.price*item.cantidad),0)
-        
-        setTotal(prueba)
-        console.log(precioTotal)
-    }
-
+    
     let AgregarAlCarrito=(item,cantidad)=>{
         //setCarrit(prev=>[...prev,{...item,cantidad}])
         if(buscadorCarrito(item.id)){
@@ -48,7 +46,7 @@ export let ItemsProvider = ({children}) => {
     // }
 
     return (
-        <ItemsContext.Provider value= {{carrito,setCarrit,vaciarCarrito ,AgregarAlCarrito }}>
+        <ItemsContext.Provider value= {{carrito,setCarrit,vaciarCarrito ,AgregarAlCarrito,borrarItems}}>
             {children}
         </ItemsContext.Provider>
     )

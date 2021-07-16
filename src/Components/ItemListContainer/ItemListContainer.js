@@ -6,7 +6,7 @@ import {db} from '../firebase/firebase';
 function ItemListContainer(props) {
     let [productos, setItems] = useState([]);
     let {category}=props
-    console.log(category)
+    //console.log(category)
     
     
     useEffect(() => {
@@ -17,14 +17,18 @@ function ItemListContainer(props) {
         //         setItems(result);
         //     })
         //     console.log(productos)
-
         (async()=>{
-            const response =await db.collection("products").get()
+            let products=db.collection("products");
+            if(category==""){
+            let response =await db.collection("products").get()
+            setItems(response.docs.map(item=>({id:item.id,...item.data() })))
+            }
+            if(category !="") products=db.collection("products").where("category","==",category)
+            let response = await products.get();
             setItems(response.docs.map(item=>({id:item.id,...item.data() })))
         })();
 
-        
-    },[])
+    },[category])
     
     return (
         <div className="Container-list row ">

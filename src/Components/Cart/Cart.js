@@ -1,25 +1,29 @@
 import React from 'react'
 import { useItemsContext } from "../ItemsContext/ItemContext";
-function Cart() {
+function Cart(props) {
     let {carrito}=useItemsContext()
+    console.log(props.total)
     return (
-        <div>
+        <div style={{height:"60vh"}} >
+          
+          <div style={{color:'white'}}>
             {carrito.map((productoSelect)=>{
               return(
-              <div className="carrito-detail-container">
+              <div>
                 <div className="carrito-detail">
                     {` Producto:${productoSelect.title} 
-                       Precio: $${productoSelect.precio} 
+                       Precio: $${productoSelect.price} 
                        Cantidad:${productoSelect.cantidad}
                     `}
-                </div>   
-                  
+                </div>
+                <div>Total:{props.total}</div>
               </div>
-              
-              )
+            )
           })}
+          </div>
         </div>
     )
 }
 
 export default Cart
+              

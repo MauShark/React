@@ -4,7 +4,7 @@ import { useItemsContext } from "../ItemsContext/ItemContext";
 import { Link } from "react-router-dom";
 function Counter({stock , producto}){
     
-    let {carrito,AgregarAlCarrito,vaciarCarrito , eliminarProducto ,totalCarrito}=useItemsContext()
+    let {AgregarAlCarrito,eliminarProducto}=useItemsContext()
     let [numero, setNumero] = useState(0);
     // let carrito1={carrito}
     let del=()=>{
@@ -43,8 +43,7 @@ function Counter({stock , producto}){
 	    <Button color='green'onClick={handleIncrement}>+</Button>
         <Button color='red' onClick={handleDecrement}>-</Button>
         {numero > 0 && <Button color='blue' onClick={()=>addCarrito()}>Agregar al carrito</Button>}
-        {/* <Button color='black' onClick={()=>c()}>Vaciar Carrito</Button> */}
-         {numero > 0 && <Button color='gray'><Link to="/Cart" className="link">Terminar compra</Link></Button>}
+        {numero > 0 && <Button color='gray'><Link to="/Cart" className="link">Terminar compra</Link></Button>}
         </div>
     );
 }
