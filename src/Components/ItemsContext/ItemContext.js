@@ -9,14 +9,26 @@ export let useItemsContext = ()=> useContext(ItemsContext);
 
 export let ItemsProvider = ({children}) => {
     let [carrito, setCarrit] = useState([]);
-    
+    console.log("carrito",carrito)
+
     let borrarItems=(id)=>{
         let carrito1=[...carrito]
-        let indexBuscado=carrito1.findIndex(item=>item.id==id)
+        let carrito2=carrito.find(el=>el.id==id)
+        carrito2.cantidad --;
+        console.log(carrito2)
+        console.log("carrito1",carrito1)
+        
+        if(carrito2.cantidad == 0){
+            const indice =carrito1.indexOf(carrito2)
+            console.log("indice a eliminar",indice)
+            carrito1.splice(indice ,1)
+            //console.log(indexBuscado)
+        }
+       // console.log(indexBuscado);
         
     }
     
-    console.log(carrito)
+    //console.log(carrito)
     
     let vaciarCarrito=()=>setCarrit([]);
 

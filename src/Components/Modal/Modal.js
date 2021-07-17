@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const CarritoModal = () => {
   let {carrito,vaciarCarrito,borrarItems}=useItemsContext()
   let [totalP,setTotal]=useState([0])
-  console.log(totalP)
+  //console.log(totalP)
 
   let vaciar=()=>vaciarCarrito([]);
 
