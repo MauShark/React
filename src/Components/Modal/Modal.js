@@ -5,7 +5,7 @@ import img from './carrito-de-compras.png';
 import './Modal.css'
 import { Link } from "react-router-dom";
 const CarritoModal = () => {
-  let {carrito,vaciarCarrito,borrarItems}=useItemsContext()
+  let {carrito,vaciarCarrito/* ,borrarItems */}=useItemsContext()
   let [totalP,setTotal]=useState([0])
   //console.log(totalP)
 
@@ -38,7 +38,7 @@ const CarritoModal = () => {
                        Precio: $${productoSelect.price} 
                        Cantidad: ${productoSelect.cantidad}
                     `}
-                  <Button style={{backgroundColor:"red" , fontSize:10}} onClick={borrarItems(productoSelect.id)}>X</Button>
+                  <Button style={{backgroundColor:"red" , fontSize:10}}>X</Button>
                 </div>   
                 
               </div>

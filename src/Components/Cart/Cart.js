@@ -1,9 +1,9 @@
 import React from 'react'
 import { useItemsContext } from "../ItemsContext/ItemContext";
 import {Button} from 'semantic-ui-react'
-function Cart(props) {
-    let {carrito,borrarItems}=useItemsContext()
-    console.log(props.total)
+function Cart() {
+    let {carrito}=useItemsContext()
+    console.log(carrito)
     
     return (
         <div style={{height:"60vh"}} >
@@ -17,12 +17,16 @@ function Cart(props) {
                        Precio: $${productoSelect.price} 
                        Cantidad:${productoSelect.cantidad}
                     `}
+                    <Button style={{backgroundColor:"red" , fontSize:10}} >X</Button>
                 </div>
-                <div>Total:{props.total}</div>
-                <Button style={{backgroundColor:"red" , fontSize:10}} onClick={()=>borrarItems(productoSelect.id)}>X</Button>
+                
+                
               </div>
             )
           })}
+          <div>
+            Total:{}
+          </div>
           </div>
         </div>
     )

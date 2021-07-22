@@ -21,7 +21,7 @@ const ItemDetail = () => {
            let resp = await db.collection("products").doc(id)
            .get()
            setItems({id: resp.id, ...resp.data()})
-           console.log(resp.data())
+           //console.log(resp.data())
             
         })()
         

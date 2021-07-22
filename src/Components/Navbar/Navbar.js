@@ -28,8 +28,10 @@ function Navbar () {
         <Menu.Item className="nabvar-item"
           name="Carrito"
           >
-          {/* <Link to="/Carrito"><CarritoContainer/></Link> */}
-          <CarritoContainer/>
+          <Link to="/Cart">
+            <CarritoContainer/>
+          </Link>
+          
         </Menu.Item> 
       </Menu>
     </div>
