@@ -41,10 +41,13 @@ export let ItemsProvider = ({children}) => {
 
     
     let borrarItems=(item)=>{
+        let cantidad=1;
        
+        
         let carritoCop = [...carrito];
-        //console.log("COPIA",carritoCop)
-        let indexBuscado = carritoCop.findIndex(produc => item.id === item.id);
+        console.log("COPIA",carritoCop)
+        let indexBuscado = carritoCop.findIndex(produc => item.id === item.id)
+        console.log("indexBUSCADO",indexBuscado)
         if (indexBuscado !== -1) {
             carritoCop.splice(indexBuscado, 1);
             setCarrit(carritoCop);
