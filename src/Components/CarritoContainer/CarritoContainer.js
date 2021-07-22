@@ -10,7 +10,7 @@ function CarritoContainer () {
             {/* <CarritoModal/> */}
             <Link to="/Cart">
                 <img src={img} height="30" width="30" alt="Carrito de compras" />
-                <span>{carrito.length}</span>
+                <span style={{textDecoration: "none", color:'black'}}>{carrito.length}</span>
             </Link>
              
         </div>

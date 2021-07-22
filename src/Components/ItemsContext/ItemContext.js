@@ -11,9 +11,16 @@ export let ItemsProvider = ({children}) => {
     let [carrito, setCarrit] = useState([]);
     console.log("carrito",carrito)
 
+    let [totalP,setTotal]=useState([0]);
+    console.log("PrecioTotal",totalP)
     
-    
+    let ActualizarTotal=()=>{
+        let PrecioTotal=carrito.reduce((acc,item)=>acc+(item.price*item.cantidad),0)
+        setTotal(PrecioTotal)
+    }
+
     let vaciarCarrito=()=>setCarrit([]);
+
 
     
     let AgregarAlCarrito=(item,cantidad)=>{
@@ -32,16 +39,23 @@ export let ItemsProvider = ({children}) => {
     };
     let buscadorCarrito=id=>carrito.some(item=>item.id===id);
 
-    // let eliminarProducto=(id,cantidad)=>{
-    //     let borrarproducto;
-    //     carrito.findIndex(element=>carrito.id ===id).map(borrarproducto)
+    
+    let borrarItems=(item)=>{
+       
+        let carritoCop = [...carrito];
+        //console.log("COPIA",carritoCop)
+        let indexBuscado = carritoCop.findIndex(produc => item.id === item.id);
+        if (indexBuscado !== -1) {
+            carritoCop.splice(indexBuscado, 1);
+            setCarrit(carritoCop);
+        }
         
-    //     setCarrit(carrito.slice(borrarproducto,1))
 
-    // }
+
+    }
 
     return (
-        <ItemsContext.Provider value= {{carrito,setCarrit,vaciarCarrito ,AgregarAlCarrito/* ,borrarItems */}}>
+        <ItemsContext.Provider value= {{carrito,setCarrit,vaciarCarrito ,AgregarAlCarrito ,ActualizarTotal,totalP,borrarItems}}>
             {children}
         </ItemsContext.Provider>
     )
