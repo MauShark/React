@@ -12,7 +12,8 @@ function Contacto(){
             </div>
             <div className="Contact-form">
                 <form>
-                    FormuFormuFormuFormuFormuFormuFormu 
+                    FormuFormuFormuFormuFormuFormuFormu
+                    
                 </form>
                 
             </div>

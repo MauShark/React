@@ -1,6 +1,9 @@
 import React, { useState ,useEffect} from 'react';
 import { useItemsContext } from "../ItemsContext/ItemContext";
 import {Button} from 'semantic-ui-react'
+import {Link} from 'react-router-dom';
+import FormComponent from '../FormComponent/FormComponent';
+
 function Cart() {
 
   let {carrito,vaciarCarrito,totalP,ActualizarTotal,borrarItems}=useItemsContext()
@@ -21,7 +24,6 @@ function Cart() {
 
   return (
       <div style={{height:"60vh"}} >
-        
         <div style={{color:'white'}}>
           {carrito.map((productoSelect)=>{
             return(
@@ -41,11 +43,12 @@ function Cart() {
         <div>
           Total: ${totalP}
         </div>
-        <Button color="blue" className="button-delete" onClick={vaciar}>Vaciar Carrito</Button>
+        <Link to="/Comprar"><Button color="green">¡Comprar!</Button></Link>
+        <Button color="red" className="button-delete" onClick={vaciar}>Vaciar Carrito</Button>
         </div>
       </div>
   )
 }
-
+//<FormComponent/>
 export default Cart
               

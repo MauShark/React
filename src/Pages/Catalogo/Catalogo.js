@@ -1,8 +1,10 @@
-import React , {useState,useEffect}from 'react'
+import React , {useState}from 'react'
 import ItemListContainer from '../../Components/ItemListContainer/ItemListContainer';
+
 
 function Catalogo(){
     let [category,setCategory]=useState([]);
+    
     //console.log(category)
     let handleChange=(e)=>{
         

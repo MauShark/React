@@ -12,7 +12,9 @@ import Catalogo from './Pages/Catalogo/Catalogo';
 import ItemDetail from './Components/ItemDetail/ItemDetail';
 import Footer from './Components/Footer/Footer';
 import {ItemsProvider} from './Components/ItemsContext/ItemContext';
-import Cart from './Components/Cart/Cart';
+import Carrito from './Pages/Carrito/Carrito';
+import FormComponent from './Components/FormComponent/FormComponent';
+import Products from './Components/Ticket/Ticket';
 
 
 function App(){
@@ -28,7 +30,8 @@ return(
           <Route path="/Catalogo/" component={Catalogo} />
           <Route path="/Contacto" component={Contacto} />
           <Route path="/Detalle/:id"  component={ItemDetail}/>
-          <Route path="/Cart" component={Cart}/>
+          <Route path="/Carrito" component={Carrito}/>
+          <Route path="/Comprar" component={Products}/>
           <Route path="*">
             <div><img src={img} width="100%" alt="homer's 404"/></div>
           </Route>

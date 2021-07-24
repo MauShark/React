@@ -4,11 +4,14 @@ import './ItemDetail.css';
 import Counter from '../ItemCount/ItemCount';
 import {db} from '../firebase/firebase';
 import { useParams } from 'react-router';
+import Load from '../Spinner/Spinner';
+
 const ItemDetail = () => {
 
     let {id} = useParams()
     let [item , setItems]= useState([]);
     
+
     useEffect(()=>{
         // fetch(`https://mocki.io/v1/06db9043-d3a3-479f-9144-646997961fe5`)
         // .then(res => res.json())
@@ -29,9 +32,10 @@ const ItemDetail = () => {
     //console.log(item)
     return (
         <div className="detalle-container">
+           
             <div className="title-container">
                 <h2>Detalle</h2>
-            </div>
+            </div> 
             <div className="detalle-card-container">   
                 <div className="detalle-producto">
                     <Card>
@@ -45,6 +49,7 @@ const ItemDetail = () => {
                     </Card>
                 </div>
             </div>
+            
         </div>
     )
 }

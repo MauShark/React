@@ -36,7 +36,7 @@ function Counter({stock , producto}){
 	    <Button color='green'onClick={handleIncrement}>+</Button>
         <Button color='red' onClick={handleDecrement}>-</Button>
         {numero > 0 && <Button color='blue' onClick={()=>addCarrito()}>Agregar al carrito</Button>}
-        {numero > 0 && <Button color='gray'><Link to="/Cart" className="link">Comprar ahora</Link></Button>}
+        {numero > 0 && <Button color='gray'><Link to="/Carrito" className="link">Comprar ahora</Link></Button>}
         </div>
     );
 }

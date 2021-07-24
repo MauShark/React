@@ -28,7 +28,7 @@ function Navbar () {
         <Menu.Item className="nabvar-item"
           name="Carrito"
           >
-          <Link to="/Cart">
+          <Link to="/Carrito">
             <CarritoContainer/>
           </Link>
           
