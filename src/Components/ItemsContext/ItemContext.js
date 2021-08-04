@@ -11,13 +11,19 @@ export let useItemsContext = ()=> useContext(ItemsContext);
 export let ItemsProvider = ({children}) => {
     let [carrito, setCarrit] = useState([]);
     //console.log("carrito",carrito)
-
     let [totalP,setTotal]=useState([0]);
     //console.log("PrecioTotal",totalP)
-    
+    let [contadorItems,setContadorItems]=useState()
+    //console.log("contadorNav",contadorItems)
     let ActualizarTotal=()=>{
         let PrecioTotal=carrito.reduce((acc,item)=>acc+(item.price*item.cantidad),0)
         setTotal(PrecioTotal)
+    }
+
+    let ActualizarContador=()=>{
+        let contadorTotal=carrito.reduce((acc,item)=>acc+(item.cantidad),0)
+        setContadorItems(contadorTotal)
+        
     }
 
     let vaciarCarrito=()=>setCarrit([]);
@@ -55,7 +61,7 @@ export let ItemsProvider = ({children}) => {
     }
 
     return (
-        <ItemsContext.Provider value= {{carrito,setCarrit,vaciarCarrito ,AgregarAlCarrito ,ActualizarTotal,totalP,borrarItems,setLoading,loading}}>
+        <ItemsContext.Provider value= {{carrito,setCarrit,vaciarCarrito ,AgregarAlCarrito ,ActualizarTotal,totalP,borrarItems,setLoading,loading,ActualizarContador,contadorItems}}>
             {children}
         </ItemsContext.Provider>
     )
