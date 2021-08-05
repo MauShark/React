@@ -21,8 +21,10 @@ export let ItemsProvider = ({children}) => {
     }
 
     let ActualizarContador=()=>{
+        
         let contadorTotal=carrito.reduce((acc,item)=>acc+(item.cantidad),0)
         setContadorItems(contadorTotal)
+        
         
     }
 

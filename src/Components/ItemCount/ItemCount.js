@@ -47,7 +47,7 @@ function Counter({stock , producto}){
     };
     return(
         <div className='CounterSection'>
-	    <span><strong>Cantidad</strong></span>
+	    <span><strong>Cantidad a agregar</strong></span>
         <p>{numero}</p>
 	    {<Button color='green'onClick={handleIncrement}>+</Button>}
         {botonN&&<Button color='red' onClick={handleDecrement}>-</Button>}

@@ -2,17 +2,19 @@ import React, { useState, useEffect } from 'react';
 import FormComponent from '../FormComponent/FormComponent';
 import { db } from '../firebase/firebase';
 import { useItemsContext } from "../ItemsContext/ItemContext";
+import TicketUser from '../TicketUser/TicketUser';
 
 
 
 let Products=()=>{
+    let {setCarrit}=useItemsContext()
     let [products,setProducts]=useState();
     let [data,setData]=useState();
     //console.log("dataguardada",data)
     //console.log(products)
     let buscador=name=>products.find(item=>item.nombre===data.nombre)
     //console.log("buscado",buscador(data))
-    
+    let ticket=[];
     
     let addProduct=async (object)=>{
         
@@ -35,25 +37,21 @@ let Products=()=>{
 	};
     useEffect(() => {
 		getProducts();
+        //setCarrit([])
+        
 	}, []);
 
-
+    
+    
     if(data){
-       let ticket=buscador(data);
-       return(
-           <div>
-               <h2>
-                   {`Su orden esta siendo procesada su ticket es : ${ticket.id}`}
-               </h2>
-           </div>
-       )
-
+        ticket=buscador(data);
+       
     }
 
     return(
         <div>
             
-            <FormComponent addProduct={addProduct} />
+            {data? (<TicketUser ticket={ticket.id}/>) : (<FormComponent addProduct={addProduct} />)}
             
             
         </div>
