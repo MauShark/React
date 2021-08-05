@@ -1,14 +1,30 @@
-import React, { useState} from "react";
+import React, { useState,useEffect} from "react";
 import { Button } from 'semantic-ui-react';
 import { useItemsContext } from "../ItemsContext/ItemContext";
-import { Link } from "react-router-dom";
 function Counter({stock , producto}){
-    
     let {AgregarAlCarrito}=useItemsContext()
     let [numero, setNumero] = useState(0);
     // let carrito1={carrito}
+    let [botonN,setbotonN]=useState(false);
+    let [botonAdd,setbotonAdd]=useState(false);
+    
+
+    useEffect(() => {
+       if(numero>0){
+           setbotonN(true)
+           setbotonAdd(true)
+       }
+       if (numero==0){
+           setbotonN(false)
+           setbotonAdd(false)
+       }
+       
+       
+       
+    },[numero])
 
     let addCarrito =()=>{
+        
         AgregarAlCarrito(producto,numero)
         
     }
@@ -33,10 +49,10 @@ function Counter({stock , producto}){
         <div className='CounterSection'>
 	    <span><strong>Cantidad</strong></span>
         <p>{numero}</p>
-	    <Button color='green'onClick={handleIncrement}>+</Button>
-        <Button color='red' onClick={handleDecrement}>-</Button>
-        {numero > 0 && <Button color='blue' onClick={()=>addCarrito()}>Agregar al carrito</Button>}
-        {numero > 0 && <Button color='gray'><Link to="/Carrito" className="link">Comprar ahora</Link></Button>}
+	    {<Button color='green'onClick={handleIncrement}>+</Button>}
+        {botonN&&<Button color='red' onClick={handleDecrement}>-</Button>}
+        {botonAdd && <Button color='blue' onClick={()=>addCarrito()}>Agregar al carrito</Button>}
+        
         </div>
     );
 }

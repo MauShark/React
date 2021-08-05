@@ -1,0 +1,16 @@
+.loading-title{
+    position:absolute ;
+    color:white  ;
+}
+.loading-container{
+    display: flex;
+    justify-content: center;
+}
+.loading-img{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: white;
+    align-self: center;
+}

@@ -13,7 +13,6 @@ import ItemDetail from './Components/ItemDetail/ItemDetail';
 import Footer from './Components/Footer/Footer';
 import {ItemsProvider} from './Components/ItemsContext/ItemContext';
 import Carrito from './Pages/Carrito/Carrito';
-import FormComponent from './Components/FormComponent/FormComponent';
 import Products from './Components/Ticket/Ticket';
 
 

@@ -47,6 +47,7 @@ export let ItemsProvider = ({children}) => {
     let buscadorCarrito=id=>carrito.some(item=>item.id===id);
 
     
+    
     let borrarItems=(item)=>{ 
         
         let carritoCop = [...carrito];
@@ -60,8 +61,12 @@ export let ItemsProvider = ({children}) => {
         
     }
 
+    let stockContext= producto =>{
+        let itemBuscado=carrito.find(e=>e.id===producto.id);
+        return itemBuscado ? producto.stock - itemBuscado.cantidad:producto.stock;
+    }
     return (
-        <ItemsContext.Provider value= {{carrito,setCarrit,vaciarCarrito ,AgregarAlCarrito ,ActualizarTotal,totalP,borrarItems,setLoading,loading,ActualizarContador,contadorItems}}>
+        <ItemsContext.Provider value= {{carrito,setCarrit,vaciarCarrito ,AgregarAlCarrito ,ActualizarTotal,totalP,borrarItems,setLoading,loading,ActualizarContador,contadorItems,stockContext}}>
             {children}
         </ItemsContext.Provider>
     )

@@ -8,7 +8,7 @@ function Home(){
                 <h2>BIENVENIDO ☻♥</h2>
             </div>
             
-            <img src={img} width="100%"></img>
+            <img src={img} width="100%" alt="home"></img>
         </div>
     )
 }

@@ -28,8 +28,9 @@ function ItemListContainer(props) {
             if(category !="") products=db.collection("products").where("category","==",category)
             let response = await products.get();
             setItems(response.docs.map(item=>({id:item.id,...item.data() })))
+            setLoading(false)
         })();
-        setLoading(false)
+        
     },[category])
     
     

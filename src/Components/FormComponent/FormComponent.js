@@ -1,7 +1,7 @@
-import { colors, Input } from '@material-ui/core';
+import {  Input } from '@material-ui/core';
 import React, { useState } from 'react'
 import { Button, Form} from 'semantic-ui-react';
-import Products from '../Ticket/Ticket';
+
 function FormComponent({addProduct}) {
     let initialState={
         nombre: "",
