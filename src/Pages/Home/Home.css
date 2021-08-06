@@ -5,4 +5,14 @@
 .home-container{
     display:flex;
     justify-content: center;
+    
+}
+
+@media screen and (max-width: 580px) {
+    .home-container{
+        display:flex;
+        justify-content: center;
+        padding-bottom: 2rem;
+        height: 50.30vh;
+    }
 }
