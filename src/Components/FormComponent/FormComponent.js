@@ -39,7 +39,7 @@ function FormComponent({ addProduct }) {
             placeholder="apellido"
             onChange={handleOnChange}
             name="apellido"
-            value={values.apeliido}
+            value={values.apellido}
           />
         </Form.Field>
         <Form.Field>

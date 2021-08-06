@@ -8,16 +8,8 @@ function ItemListContainer(props) {
   let [productos, setItems] = useState([]);
   let { category } = props;
   let { loading, setLoading } = useItemsContext();
-  //console.log(category)
 
   useEffect(() => {
-    // fetch("https://mocki.io/v1/06db9043-d3a3-479f-9144-646997961fe5")
-    // .then(res => res.json())
-    // .then(
-    //     (result) => {
-    //         setItems(result);
-    //     })
-    //     console.log(productos)
     (async () => {
       let products = db.collection("products");
       if (category == "") {

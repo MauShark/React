@@ -4,7 +4,6 @@ import ItemListContainer from "../../Components/ItemListContainer/ItemListContai
 function Catalogo() {
   let [category, setCategory] = useState([]);
 
-  //console.log(category)
   let handleChange = (e) => {
     setCategory(e.target.value);
   };

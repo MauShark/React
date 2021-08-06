@@ -3,12 +3,9 @@ import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import { Link } from "react-router-dom";
 
 function ItemList({ productos }) {
-  //console.log(productos);
-
   return (
     <div className="Container-list row ">
       {productos.map((producto) => {
-        //console.log(producto)
         return (
           <div
             key={producto.id}

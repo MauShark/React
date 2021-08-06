@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useItemsContext } from "../ItemsContext/ItemContext";
-import "./TicketUser.css"
+import "./TicketUser.css";
 let TicketUser = ({ ticket }) => {
   let { setCarrit } = useItemsContext();
-  //console.log(ticket)
+
   useEffect(() => {
     setCarrit([]);
   }, []);

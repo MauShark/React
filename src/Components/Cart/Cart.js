@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import { useItemsContext } from "../ItemsContext/ItemContext";
 import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import "./Cart.css"
+import "./Cart.css";
 function Cart() {
   let { carrito, vaciarCarrito, totalP, actualizarTotal, borrarItems } =
     useItemsContext();
-  //console.log(carrito)
   let vaciar = () => vaciarCarrito([]);
 
   useEffect(() => {
@@ -55,5 +54,5 @@ function Cart() {
     </div>
   );
 }
-//<FormComponent/>
+
 export default Cart;

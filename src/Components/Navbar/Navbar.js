@@ -7,7 +7,6 @@ function Navbar() {
   return (
     <div className="nabvar-container">
       <Menu>
-        {/*style={{backgroundColor: "#353434"}}*/}
         <Menu.Item className="nabvar-item" name="Nosotros">
           <Link to="/Nosotros" className="link">
             Nosotros

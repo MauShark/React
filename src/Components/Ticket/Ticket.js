@@ -6,16 +6,15 @@ import TicketUser from "../TicketUser/TicketUser";
 let Products = () => {
   let [products, setProducts] = useState();
   let [data, setData] = useState();
-  //console.log("dataguardada",data)
-  //console.log(products)
+
   let buscador = (name) => products.find((item) => item.nombre === data.nombre);
-  //console.log("buscado",buscador(data))
+
   let ticket = [];
 
   let addProduct = async (object) => {
     await db.collection("Pedidos").doc().set(object);
     console.log("Subido");
-    //console.log("obj",object)
+
     const data = object;
     setData(data);
   };
@@ -30,7 +29,6 @@ let Products = () => {
   };
   useEffect(() => {
     getProducts();
-    //setCarrit([])
   }, []);
 
   if (data) {

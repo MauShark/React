@@ -6,11 +6,11 @@ export let useItemsContext = () => useContext(ItemsContext);
 
 export let ItemsProvider = ({ children }) => {
   let [carrito, setCarrit] = useState([]);
-  console.log("carrito", carrito);
+
   let [totalP, setTotal] = useState([0]);
-  //console.log("PrecioTotal",totalP)
+
   let [contadorItems, setContadorItems] = useState();
-  //console.log("contadorNav",contadorItems)
+
   let actualizarTotal = () => {
     let PrecioTotal = carrito.reduce(
       (acc, item) => acc + item.price * item.cantidad,
@@ -29,7 +29,6 @@ export let ItemsProvider = ({ children }) => {
   let [loading, setLoading] = useState(true);
 
   let agregarAlCarrito = (item, cantidad) => {
-    //setCarrit(prev=>[...prev,{...item,cantidad}])
     if (buscadorCarrito(item.id)) {
       let carritoProv = carrito.map((producto) => {
         if (producto.id === item.id) {
@@ -44,12 +43,10 @@ export let ItemsProvider = ({ children }) => {
   let buscadorCarrito = (id) => carrito.some((item) => item.id === id);
 
   let borrarItems = (id) => {
-    console.log("id a borrar", id);
     let carritoCop = [...carrito];
 
     let indexBuscado = carritoCop.findIndex((Object) => Object.id === id);
-    //let indexBuscado=carritoCop.findIndex()
-    console.log("indexbuscado", indexBuscado);
+
     if (indexBuscado !== -1) {
       carritoCop.splice(indexBuscado, 1);
       setCarrit(carritoCop);

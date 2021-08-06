@@ -13,24 +13,16 @@ const ItemDetail = () => {
   let [item, setItems] = useState([]);
   let stock = stockContext(item);
   let [loading, setLoading] = useState(true);
-  //console.log("stockprodc",stock)
 
   useEffect(() => {
-    // fetch(`https://mocki.io/v1/06db9043-d3a3-479f-9144-646997961fe5`)
-    // .then(res => res.json())
-    // .then(
-    //     (result) => {
-    //         setItems(result);
-    //     })
-
     (async () => {
       let resp = await db.collection("products").doc(id).get();
       setItems({ id: resp.id, ...resp.data() });
-      //console.log(resp.data())
+
       setLoading(false);
     })();
   }, [id]);
-  //console.log(item)
+
   return (
     <div className="detalle-container">
       <div className="title-container">
@@ -51,7 +43,7 @@ const ItemDetail = () => {
               {stock > 0 ? (
                 <Counter stock={stock} producto={item} />
               ) : (
-                <h2>usp.. no hay stock :( !</h2>
+                <h2>ups.. no hay stock :( !</h2>
               )}
             </Card>
           </div>

@@ -4,7 +4,7 @@ import { useItemsContext } from "../ItemsContext/ItemContext";
 function Counter({ stock, producto }) {
   let { agregarAlCarrito } = useItemsContext();
   let [numero, setNumero] = useState(0);
-  // let carrito1={carrito}
+
   let [botonN, setbotonN] = useState(false);
   let [botonAdd, setbotonAdd] = useState(false);
 
