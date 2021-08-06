@@ -1,7 +1,7 @@
 .Contact-container{
     display: block;
     background-color: rgba(250, 250, 250, 0.160);
-    
+    height: 59vh;
 }
 .Contact-number{
     margin: 2px;
@@ -19,4 +19,8 @@
     justify-content: center;
     margin: 2px;
     padding: 5px 0px;
+}
+.Contact-map{
+    display: flex;
+    justify-content: center;
 }

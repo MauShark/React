@@ -1,0 +1,12 @@
+.cart-container{
+    margin: 20px;
+    padding:  25vh 0 ;
+    background-color: rgba(255, 255, 255, 0.103);
+    display: flex;
+    justify-content: center;
+}
+
+.cart-detail{
+    background-color: rgba(255, 255, 255, 0.103);
+    height: 59vh;
+}
